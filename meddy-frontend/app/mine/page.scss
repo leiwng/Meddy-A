@@ -1,0 +1,248 @@
+.mine-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .title {
+      .ant-btn {
+        height: 40px;
+        padding: 0 24px;
+        font-size: 14px;
+        font-weight: 500;
+        background: #10b981;
+        border-color: #10b981;
+        border-radius: 6px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &:hover {
+          background: #059669;
+          border-color: #059669;
+        }
+
+        &::before {
+          content: '+';
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    gap: 24px;
+    min-height: calc(100vh - 120px);
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    .assitant-list {
+      width: 240px;
+      border-right: 1px solid #e5e7eb;
+      padding: 16px;
+      background: #f9fafb;
+
+      .assitant-item {
+        padding: 12px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: #4b5563;
+
+        &:hover {
+          background: #f3f4f6;
+        }
+
+        &.active {
+          background-color: #e6f4ff;
+          color: #1890ff;
+        }
+      }
+    }
+
+    .assitant-content {
+      flex: 1;
+      padding: 24px;
+
+      .role-info {
+        margin-bottom: 32px;
+
+        .edit-role {
+          font-size: 18px;
+          font-weight: 500;
+          color: #1f2937;
+          margin-bottom: 16px;
+        }
+        .edit-assistant{
+          margin-left: 10px;
+          cursor: pointer;
+        }
+        .edit-role-content {
+          .edit-label{
+            display: inline-block;
+            padding: 2px 8px;
+            background: #e6f4ff;
+            color: #1890ff;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-right: 8px;
+            margin-bottom: 4px;
+            vertical-align: middle;
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+          }
+          padding: 16px;
+          background: #f9fafb;
+          border-radius: 8px;
+          color: #4b5563;
+          line-height: 1.6;
+        }
+      }
+
+      .file-info {
+        .edit-file {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 18px;
+          font-weight: 500;
+          color: #1f2937;
+          margin-bottom: 16px;
+        }
+
+        .edit-file-content {
+          display: grid;
+          gap: 16px;
+          grid-template-columns: repeat(3, minmax(0, 1fr)); // Changed
+          max-height: calc(100vh - 336px); // Adjust this value based on your header heights
+          overflow-y: auto;
+          padding-right: 8px; // Add padding for scrollbar
+            // Custom scrollbar styling
+          &::-webkit-scrollbar {
+            width: 6px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 3px;
+
+            &:hover {
+              background: #9ca3af;
+            }
+          }
+          .file-card {
+            display: flex;
+            align-items: center;
+            height: 82px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            position: relative;
+            background-color: #f3f3f3;
+            .hover-show {
+              position: absolute;
+              right: 10px;
+              bottom: 0px;
+              opacity: 0;
+              transform: translateY(-50%);
+              transition: opacity 0.2s ease;
+              .anticon-delete {
+                font-size: 16px;
+                color: #b2adad63;
+                &:hover {
+                  color: #8c8585;
+                }
+              }
+            }
+
+            &:hover {
+              box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+              .hover-show {
+                opacity: 1;
+              }
+            }
+
+            .file-icon {
+              flex-shrink: 0;
+              width: 52px;
+              height: 52px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              img {
+                width: 40px;
+                height: 40px;
+                object-fit: contain;
+              }
+            }
+
+            .file-detail {
+              flex: 1;
+              min-width: 0; // Enables text truncation
+              padding: 0 12px; // Add padding for spacing
+              max-width: calc(100% - 62px);
+
+              .file-name {
+                font-size: 14px;
+                color: #1f2937;
+                margin-bottom: 4px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: calc(100% - 30px); // Leave space for hover button
+              }
+
+              .time {
+                font-size: 12px;
+                color: #6b7280;
+                position: relative;
+              }
+            }
+            .status {
+              position: absolute;
+              left: 12px;
+              bottom: 0;
+              font-size: 12px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              padding: 4px 8px;
+              background: #f5f5f5;
+              border-radius: 4px;
+              font-size: 12px;
+              color: #666;
+              transition: opacity 0.3s ease;
+              &.fade-out {
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1920px) {
+    max-width: 1328px;
+  }
+}

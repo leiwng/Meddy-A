@@ -1,0 +1,36 @@
+.uploadWrapper {
+  position: relative;
+}
+
+.uploadWrapper:hover .actionsOverlay {
+  opacity: 1 !important;
+}
+
+.actionsOverlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+}
+
+.actionsRow {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.actionButton {
+  color: #fff !important;
+}
+
+.actionButton:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+}

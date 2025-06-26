@@ -1,0 +1,70 @@
+.selectContainer {
+  position: relative;
+  width: 106px;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.trigger:hover {
+  background: #e5e7eb;
+}
+
+.triggerText {
+  font-size: 14px;
+  color: #374151;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: #6b7280;
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+}
+
+.iconOpen {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  bottom: calc(100% + 4px); /* Changed from top to bottom */
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.1); /* Adjusted shadow for upward display */
+  z-index: 50;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.option {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.option:hover {
+  background-color: #f3f4f6;
+}
+
+.selected {
+  background-color: #e5e7eb;
+  color: #111827;
+  font-weight: 500;
+}
